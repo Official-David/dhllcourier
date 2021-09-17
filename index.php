@@ -190,7 +190,7 @@
                 </div><!-- /.carousel -->
               </div><!-- /.col-lg-5 -->
               <div class="col-sm-12 col-md-7 col-lg-7">
-                <p class="heading__desc mb-30">Appris Express Courier Services provides full range
+                <p class="heading__desc mb-30">DHLL Courier Services provides full range
                   of service in the sphere of customs clearance and transport worldwide for any type of cargo.</p>
                 <p>We pride ourselves on providing the best transport and shipping services available allover the
                   world. Our skilled personnel, utilizing the latest communications, tracking and processing software,
