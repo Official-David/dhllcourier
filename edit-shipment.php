@@ -44,8 +44,6 @@ if(isset($_POST['delete'])){
 $tracking_id = $_POST['tracking_id'];
 $delete = "DELETE FROM shipments WHERE tracking_id = '$tracking_id'";
 if ($myConn->query($delete) === TRUE) {
-  // echo $tracking_id;
-  // echo "helllllo";
   ?>
 
   <script type="text/javascript">
