@@ -194,7 +194,7 @@
                   of service in the sphere of customs clearance and transport worldwide for any type of cargo.</p>
                 <p>We pride ourselves on providing the best transport and shipping services available allover the
                   world. Our skilled personnel, utilizing the latest communications, tracking and processing software,
-                  combined with decades of experience! Through integrated supply chain solutions, Appris Express Courier Services drives
+                  combined with decades of experience! Through integrated supply chain solutions, DHLL Courier Services drives
                   sustainable competitive advantages to some of Australia's largest companies.</p>
 
               </div><!-- /.col-lg-7 -->
@@ -537,7 +537,7 @@
               <!-- Testimonial #1 -->
               <div class=" testimonial-item">
                 <div class="testimonial__content">
-                  <p class="testimonial__desc">Appris Express team is the best of the best, got my package delivered in good time. Excellent service. Love you guys!</p>
+                  <p class="testimonial__desc">DHLL team is the best of the best, got my package delivered in good time. Excellent service. Love you guys!</p>
                 </div><!-- /.testimonial-content -->
               </div><!-- /. testimonial-item -->
               <!-- Testimonial #2 -->
@@ -591,7 +591,7 @@
             </div><!-- /.contact-panel -->
           </div><!-- /.col-lg-4 -->
           <div class="col-sm-12 col-md-12 col-lg-3 text-right">
-            <h2 class="cta__title">Sign up for industry news and insights from Appris Express Courier Services.</h2>
+            <h2 class="cta__title">Sign up for industry news and insights from DHLL Courier Services.</h2>
           </div><!-- /.col-lg-3 -->
           <div class="col-sm-12 col-md-12 col-lg-5">
             <form>
@@ -619,7 +619,7 @@
             <div class="col-6 col-sm-6 col-md-3 col-lg-3 footer__widget footer__widget-nav">
               <h6 class="footer__widget-title">Who We Are</h6>
               <div class="footer__widget-content">
-                <p class="text-justify">Appris Express Courier Services is a worldwide Logistics operator providing full
+                <p class="text-justify">DHLL Courier Services is a worldwide Logistics operator providing full
                   range of service in the sphere of customs clearance and transportation worldwide for any type of
                   cargo.</p>
               </div><!-- /.footer-widget-content -->
@@ -658,7 +658,7 @@
           <div class="row">
             <div class="col-sm-12 col-md-9 col-lg-9">
               <div class="footer__copyright">
-                <span>&copy; <?php echo date("Y");?> Appris Express Courier Services</span>
+                <span>&copy; <?php echo date("Y");?> DHLL Courier Services</span>
               </div><!-- /.Footer-copyright -->
             </div><!-- /.col-lg-6 -->
           </div><!-- /.row -->
