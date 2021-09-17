@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="description" content="Safe and reliable courier solution.">
   <link href="assets/images/favicon/favicon.png" rel="icon">
-  <title>Welcome to Appris Express Courier Services</title>
+  <title>Welcome to DHLL Courier Services</title>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Roboto:400,700%7cWork+Sans:400,600,700&display=swap">
   <link rel="stylesheet" href="assets/css/libraries.css" />
