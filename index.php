@@ -579,7 +579,7 @@
                   <div id="collapse1" class="collapse  show" data-parent="#accordion">
                     <div class="accordion__item-body">
                       <ul class="contact__list list-unstyled">
-                        <li>Email: support@apprisexpress.com</li>
+                        <li>Email: support@dhllcourier.com</li>
                         <li>Hours: Mon-Fri: 8am – 7pm</li>
                       </ul>
                     </div><!-- /.accordion-item-body -->
