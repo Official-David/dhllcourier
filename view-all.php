@@ -3,14 +3,15 @@ session_start();
 include("connect.php");
 //error_reporting(0);
 if (isset($_SESSION['email'])) {
-    // header("location:make-shipment");
-}else{
-    header("location:login.php");
+  // header("location:make-shipment");
+} else {
+  header("location:login.php");
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,11 +19,11 @@ if (isset($_SESSION['email'])) {
   <meta name="description" content="DHLL Courier Services">
   <link href="assets/images/favicon/favicon.png" rel="icon">
   <title>View All Shipment || DHLL Courier Services</title>
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Roboto:400,700%7cWork+Sans:400,600,700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700%7cWork+Sans:400,600,700&display=swap">
   <link rel="stylesheet" href="assets/css/libraries.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body>
   <div class="wrapper">
     <!-- =========================
@@ -48,7 +49,7 @@ if (isset($_SESSION['email'])) {
             <ul class="navbar-nav ml-auto">
               <li class="nav__item with-dropdown">
                 <a href="login.php" class="dropdown-toggle nav__item-link">Home</a>
-                <i class="fa fa-angle-right" ></i>
+                <i class="fa fa-angle-right"></i>
               </li><!-- /.nav-item -->
               <li class="nav__item with-dropdown">
                 <a href="make-shipment.php" class="nav__item-link">Make Shipment</a>
@@ -101,120 +102,75 @@ if (isset($_SESSION['email'])) {
 
           <div class="col-sm-12 col-md-12 col-lg-12">
 
-          <table class="table table-striped table-responsive ">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Tracking ID</th>
-      <th scope="col">Status</th>
-      <th scope="col">Package</th>
-      <th scope="col">Carrier</th>
-      <th scope="col">Comments</th>
-      <th scope="col" colspan="2">Action</th>
-    </tr>
-  </thead>
-  <tbody>
+            <table class="table table-striped table-responsive ">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Tracking ID</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Package</th>
+                  <th scope="col">Carrier</th>
+                  <th scope="col">Comments</th>
+                  <th scope="col" colspan="2">Action</th>
+                </tr>
+              </thead>
+              <tbody>
 
-    <tr>
-      <?php $trace = mysqli_query($myConn,"SELECT * FROM shipments order by created_at");
+                <tr>
+                  <?php $trace = mysqli_query($myConn, "SELECT * FROM shipments order by created_at");
+                  while ($row =  mysqli_fetch_array($trace, MYSQLI_ASSOC)) {
+                    $tracking_id = $row['tracking_id'];
+                    global $tracking_id;
+                  ?>
+                    <th scope="row"><?php echo $row['id']; ?></th>
+                    <td><?php echo $row['tracking_id']; ?></td>
+                    <td><?php echo $row['statu']; ?></td>
+                    <td><?php echo $row['package']; ?></td>
+                    <td><?php echo $row['carrier']; ?></td>
+                    <td><?php echo $row['comments']; ?></td>
 
-while ($row =  mysqli_fetch_array($trace, MYSQLI_ASSOC)){
-$tracking_id = $row['tracking_id'];
-global $tracking_id;
-  ?>
-      <th scope="row"><?php echo $row['id']; ?></th>
-      <td><?php echo $row['tracking_id']; ?></td>
-      <td><?php echo $row['statu']; ?></td>
-      <td><?php echo $row['package']; ?></td>
-      <td><?php echo $row['carrier']; ?></td>
-      <td><?php echo $row['comments']; ?></td>
+                    <form method="POST" action="editSingleShipment.php">
+                      <input type="hidden" name="tracking_id" value=<?php echo $row['tracking_id']; ?>>
+                      <td><button type="submit" class="btn btn__primary" data-toggle="modal" data-target="#exampleModal" name="edit">Edit</button></td>
+                    </form>
 
+                    <!-- ================= -->
 
-      <form method="POST" action="editSingleShipment.php">
-        <input type="hidden" name="tracking_id" value = <?php echo $row['tracking_id'];?>>
-      <td><button type="submit" class="btn btn__primary" data-toggle="modal" data-target="#exampleModal" name="edit">Edit</button></td>
-      </form>
+                    <td><button class="btn btn__primary" data-toggle="modal" data-target="#exampleModa">Delete</button></td>
 
-    <!-- ================= -->
+                    <!-- Button trigger modal -->
 
-<!-- <div class="modal fade col-lg-12 col-sm-12" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"><a href="edit-shipment.php">Edit Shipment</a></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Delete Shipment</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <p>Confirm you want to delete this shipment?</p>
+                          </div>
+                          <div class="modal-footer">
+                            <form method="POST" action="edit-shipment.php">
+                              <input type="hidden" name="tracking_id" value=<?php echo $row['tracking_id']; ?>>
+                              <button tpe="button" class="btn btn__secondary" data-dismiss="modal">Cancel</button>
+                              <button type="submit" class="btn btn__primary" name="delete">Delete</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
-        <form method="POST" action="edit-shipment.php">
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Status</label>
-            <select class="form-control" name="statuB">
-                      <option value="Active">Active</option>
-                      <option value="On Hold">On Hold</option>
-                      <option value="Calceled">Canceled</option>
-                    </select>
-          </div>
-          <div class="form-group">
-            <label for="message-text" class="col-form-label">Package</label>
-            <input class="form-control" id="message-text" name="package"></input>
-          </div>
-          <div class="form-group">
-            <label for="message-text" class="col-form-label">Carrier</label>
-            <input class="form-control" id="message-text" name="carrier"></input>
-          </div>
-          <div class="form-group">
-            <label for="message-text" class="col-form-label">Comments</label>
-            <input class="form-control" id="message-text" name="comments"></input>
-            <input type="hidden" name="track_id" value="">
-          </div>
-          <div class="modal-footer">
-        <button type="button" class="btn btn__secondary" data-dismiss="modal">Cancle</button>
-        <button type="submit" name="save" class="btn btn__primary btn__secondary">Save</button>
-      </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div> -->
+                </tr>
+              <?php
 
-<td><button class="btn btn__primary" data-toggle="modal" data-target="#exampleModa">Delete</button></td>
-
-      <!-- Button trigger modal -->
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Delete Shipment</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Confirm you want to delete this shipment?</p>
-      </div>
-      <div class="modal-footer">
-        <form method="POST" action="edit-shipment.php">
-        <input type="hidden" name="tracking_id" value = <?php echo $row['tracking_id'];?>>
-        <button tpe="button" class="btn btn__secondary" data-dismiss="modal">Cancel</button>
-        <button type="submit" class="btn btn__primary" name="delete">Delete</button>
-</form>
-      </div>
-    </div>
-  </div>
-</div>
-
-    </tr>
-    <?php
-
-}
-?>
-  </tbody>
-</table>
+                  }
+              ?>
+              </tbody>
+            </table>
 
 
           </div><!-- /.col-lg-8 -->
@@ -276,7 +232,7 @@ global $tracking_id;
           <div class="row">
             <div class="col-sm-12 col-md-9 col-lg-9">
               <div class="footer__copyright">
-                <span>&copy; <?php echo date("Y");?> DHLL Courier Services</span>
+                <span>&copy; <?php echo date("Y"); ?> DHLL Courier Services</span>
               </div><!-- /.Footer-copyright -->
             </div><!-- /.col-lg-6 -->
           </div><!-- /.row -->
@@ -294,7 +250,6 @@ global $tracking_id;
     </div><!-- /.module-search-container -->
 
   </div><!-- /.wrapper -->
-
   <script src="assets/js/jquery-3.3.1.min.js"></script>
   <script src="assets/js/plugins.js"></script>
   <script src="assets/js/main.js"></script>
