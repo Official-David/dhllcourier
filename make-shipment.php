@@ -15,9 +15,9 @@ if (isset($_SESSION['email'])) {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <meta name="description" content="Appris Express Courier Services ">
+  <meta name="description" content="DHLL Courier Services ">
   <link href="assets/images/favicon/favicon.png" rel="icon">
-  <title>Make Shipment || Appris Express Courier Services</title>
+  <title>Make Shipment || DHLL Courier Services</title>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Roboto:400,700%7cWork+Sans:400,600,700&display=swap">
   <link rel="stylesheet" href="assets/css/libraries.css" />
@@ -825,7 +825,7 @@ if (isset($_SESSION['email'])) {
             <div class="col-6 col-sm-6 col-md-3 col-lg-3 footer__widget footer__widget-nav">
               <h6 class="footer__widget-title">Who We Are</h6>
               <div class="footer__widget-content">
-                <p class="text-justify">Appris Express Courier Services is a worldwide Logistics operator providing full
+                <p class="text-justify">DHLL Courier Services is a worldwide Logistics operator providing full
                   range of service in the sphere of customs clearance and transportation worldwide for any type of
                   cargo.</p>
               </div><!-- /.footer-widget-content -->
@@ -864,7 +864,7 @@ if (isset($_SESSION['email'])) {
           <div class="row">
             <div class="col-sm-12 col-md-9 col-lg-9">
               <div class="footer__copyright">
-                <span>&copy; <?php echo date("Y");?> Appris Express Courier Services</span>
+                <span>&copy; <?php echo date("Y");?> DHLL Courier Services</span>
               </div><!-- /.Footer-copyright -->
             </div><!-- /.col-lg-6 -->
           </div><!-- /.row -->
