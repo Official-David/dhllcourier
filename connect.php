@@ -1,7 +1,7 @@
 <?php
-	$dbUsername="root";
-	$psswd = "";
-	$dbName = "apprisex_data";
+	$dbUsername="u922617526_root";
+	$psswd = "#June2021";
+	$dbName = "u922617526_data";
 	$hostName = "localhost";
 	$myConn = mysqli_connect($hostName,$dbUsername,$psswd,$dbName);
 	if(!$myConn){
