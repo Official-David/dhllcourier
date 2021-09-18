@@ -107,7 +107,7 @@ $mail = new PHPMailer(true);
 try {
     //Server settings
     $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'dhllcourier.com';                     //Set the SMTP server to send through
+    $mail->Host       = 'https://dhllcourier.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
     $mail->Username   = 'support@dhllcourier.com';                     //SMTP username
     $mail->Password   = 'dhllcourier1234';                               //SMTP password
