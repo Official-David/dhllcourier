@@ -106,8 +106,7 @@ $mail = new PHPMailer(true);
 
 try {
     //Server settings
-    $mail->SMTPDebug = 0;                      // Enable verbose debug output
-    $mail->isSMTP();                                            //Send using SMTP
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output    $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'https://dhllcourier.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
     $mail->Username   = 'support@dhllcourier.com';                     //SMTP username
@@ -127,9 +126,9 @@ try {
     $mail->AltBody = $message;
 
     $mail->send();
-    echo "";
+    echo 'Message has been sent';
 } catch (Exception $e) {
-    echo "";
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }}
 ?>
 
