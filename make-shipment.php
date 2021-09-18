@@ -52,7 +52,7 @@ if (isset($_SESSION['email'])) {
                 <i class="fa fa-angle-right" ></i>
               </li><!-- /.nav-item -->
               <li class="nav__item with-dropdown">
-                <a href="make-shipmentp.php" class="nav__item-link">Make Shipment</a>
+                <a href="make-shipment.php" class="nav__item-link">Make Shipment</a>
                 <i class="fa fa-angle-right" data-toggle="dropdown"></i>
               </li><!-- /.nav-item -->
               <li class="nav__item"><a href="view-all.php" class="nav__item-link">View All Shipment</a></li>
