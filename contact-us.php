@@ -126,7 +126,7 @@ try {
     $mail->AltBody = $message;
 
     $mail->send();
-    echo '';
+    echo $errorMessage;;
 } catch (Exception $e) {
     echo "";
 }}
@@ -193,8 +193,6 @@ try {
     <!-- =========================
       Mailer
     ============================ -->
-
-<p><?php echo $errorMessage; ?></p>
     <!-- ========================
       Footer
     ========================== -->
