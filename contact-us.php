@@ -126,9 +126,9 @@ try {
     $mail->AltBody = $message;
 
     $mail->send();
-    echo $errorMessage;;
+    echo $errorMessage;
 } catch (Exception $e) {
-    echo "";
+    echo "e no work";
 }}
 ?>
 
