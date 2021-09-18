@@ -106,6 +106,7 @@ $mail = new PHPMailer(true);
 
 try {
     //Server settings
+    $mail->SMTPDebug = 0;                      // Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'https://dhllcourier.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -126,9 +127,9 @@ try {
     $mail->AltBody = $message;
 
     $mail->send();
-    echo $errorMessage;
+    echo "";
 } catch (Exception $e) {
-    echo "e no work";
+    echo "";
 }}
 ?>
 
